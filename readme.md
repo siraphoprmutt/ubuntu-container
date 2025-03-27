@@ -1,6 +1,37 @@
 # จำลอง server ubuntu ในเครื่อง โดยใช้ docker
 
-## 1. Run `docker compose up -d`
+- โปรเจกต์นี้เป็นการสร้าง Ubuntu server จำลองผ่าน Docker โดยติดตั้ง OpenSSH และตั้งค่าผู้ใช้ docker สำหรับการเข้าใช้งานจากภายนอก ผ่าน ssh docker@localhost
+
+```bash
+
+เหมาะสำหรับ:
+
+ใช้ฝึกคำสั่ง Linux/Ubuntu
+
+ทดลองตั้งค่า server ต่าง ๆ โดยไม่กระทบระบบหลัก
+
+จำลอง environment สำหรับการเรียนหรือ DevOps เบื้องต้น
+
+============
+
+โครงสร้าง
+Dockerfile : กำหนด image base, ติดตั้ง SSH, และสร้าง user docker
+
+docker-compose.yml : ใช้งานร่วมกับ Docker Compose เพื่อให้รัน container ได้สะดวกขึ้น
+
+data/ : โฟลเดอร์แชร์ข้อมูลระหว่างเครื่องจริงกับ container
+
+```
+
+## 1. เริ่มต้นการใช้งาน Run `docker compose up -d`
+
+```bash
+
+git clone https://github.com/siraphoprmutt/ubuntu-container.git
+cd ubuntu-container
+docker compose up -d
+
+```
 
 ## 2. รีโมทเข้า server ด้วย ssh `ssh docker@localhost`
 
