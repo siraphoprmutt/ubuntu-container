@@ -1,0 +1,11 @@
+services:
+  ubuntu:
+    build: .
+    container_name: ubuntu-container
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+    ports:
+      - "22:22" # เปิด SSH port (หรือจะใช้ "2222:22" เพื่อ map พอร์ต)
+    volumes:
+      - ./data:/data
