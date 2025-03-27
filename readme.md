@@ -2,26 +2,23 @@
 
 - โปรเจกต์นี้เป็นการสร้าง Ubuntu server จำลองผ่าน Docker โดยติดตั้ง OpenSSH และตั้งค่าผู้ใช้ docker สำหรับการเข้าใช้งานจากภายนอก ผ่าน ssh docker@localhost
 
-```bash
+  เหมาะสำหรับ:
 
-เหมาะสำหรับ:
+  - ใช้ฝึกคำสั่ง Linux/Ubuntu
 
-ใช้ฝึกคำสั่ง Linux/Ubuntu
+  - ทดลองตั้งค่า server ต่าง ๆ โดยไม่กระทบระบบหลัก
 
-ทดลองตั้งค่า server ต่าง ๆ โดยไม่กระทบระบบหลัก
+  - จำลอง environment สำหรับการเรียนหรือ DevOps เบื้องต้น
 
-จำลอง environment สำหรับการเรียนหรือ DevOps เบื้องต้น
+  ============
 
-============
+  โครงสร้าง
 
-โครงสร้าง
-Dockerfile : กำหนด image base, ติดตั้ง SSH, และสร้าง user docker
+  - Dockerfile : กำหนด image base, ติดตั้ง SSH, และสร้าง user docker
 
-docker-compose.yml : ใช้งานร่วมกับ Docker Compose เพื่อให้รัน container ได้สะดวกขึ้น
+  - docker-compose.yml : ใช้งานร่วมกับ Docker Compose เพื่อให้รัน container ได้สะดวกขึ้น
 
-data/ : โฟลเดอร์แชร์ข้อมูลระหว่างเครื่องจริงกับ container
-
-```
+  - data/ : โฟลเดอร์แชร์ข้อมูลระหว่างเครื่องจริงกับ container
 
 ## 1. เริ่มต้นการใช้งาน Run `docker compose up -d`
 
